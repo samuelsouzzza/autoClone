@@ -11,9 +11,6 @@ def clone_repo(user_name, repo_name, destination_path):
     clone_command = f'git clone https://github.com/{user_name}/{repo_name}'
     cloning = subprocess.run(clone_command, shell=True)
 
-    open_command = f'code {destination_path}/{repo_name}'
-    subprocess.run(open_command, shell=True)
-
     if (cloning.returncode != 0):
         print('')
         print(
@@ -30,6 +27,11 @@ def clone_repo(user_name, repo_name, destination_path):
     else:
         print('')
         print(f'{Fore.GREEN}O repositório "{repo_name}" foi clonado com sucesso!')
+
+        open_command = f'code {destination_path}/{repo_name}'
+        subprocess.run(open_command, shell=True)
+
+        print(f'{Fore.YELLOW}Abrindo no Visual Code...')
 
 
 while True:

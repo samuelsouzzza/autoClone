@@ -12,7 +12,7 @@ Uma aplicação desenvolvida em python que automatiza o processo de clonagem de 
 
 Ao executar o programa, o terminal abrirá e será apresentado um menu com as opções das funções a serem executadas dentro do programa. Digite a opção desejada e siga as instruções para concluí-las.
 
-Você pode baixar o arquivo executável [aqui](exe/autoclone.rar)
+Você pode baixar o arquivo executável [aqui](exe/autoclone.rar?raw=true)
 
 
 ## Tecnologias

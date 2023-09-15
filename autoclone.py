@@ -1,12 +1,18 @@
 #!/C:/Users/ALUNO/AppData/Local/Microsoft/WindowsApps/python3.exe
 
 import subprocess
-from colorama import Fore, Style
+import os
+from colorama import Fore
 
 
-def clone_repo(user_name, repo_name):
+def clone_repo(user_name, repo_name, destination_path):
+    os.chdir(destination_path)
+
     clone_command = f'git clone https://github.com/{user_name}/{repo_name}'
     cloning = subprocess.run(clone_command, shell=True)
+
+    open_command = f'code {destination_path}/{repo_name}'
+    subprocess.run(open_command, shell=True)
 
     if (cloning.returncode != 0):
         print('')
@@ -51,7 +57,7 @@ while True:
 
         try:
             if (len(user_name) != 0 and len(repo_name) != 0):
-                clone_repo(user_name, repo_name)
+                clone_repo(user_name, repo_name, 'C:/Users/ALUNO/Desktop/')
 
             else:
                 raise Exception(
